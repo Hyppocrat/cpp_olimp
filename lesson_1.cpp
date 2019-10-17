@@ -45,3 +45,35 @@ int main(){
     cout << a3 + a2 + a1 << " " << a3 << a2 << a1 << " " << b;
     // 123
 }
+
+==============================================
+  
+#include <iostream>
+using namespace std;
+
+int main(){
+    int a;
+    cin >> a;
+    if (a > 9 && a < 100){
+      cout << "YES";
+    }
+    else {
+      cout << "NO";
+    }
+}
+
+================================================
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int a;
+    cin >> a;
+    if (a < 10 || a > 99){
+      cout << "NO";
+    }
+    else {
+      cout << "YES";
+    }
+}
