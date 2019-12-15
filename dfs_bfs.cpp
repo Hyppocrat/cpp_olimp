@@ -7,7 +7,7 @@
 #include <map>
 #include <set>
 using namespace std;
-void bfs(const vector <vector <int> > &gr, int s, vector<char> &used, vector <int> &d){
+void bfs(const vector <vector <int> > &gr, int s, vector<char> &used, vector <int> &d){ // обход в ширину
     // used[i] = 0, если вершина i не была посещена
     // used[i] = 1, если вершину i посетили
     queue <int> q;
@@ -26,19 +26,17 @@ void bfs(const vector <vector <int> > &gr, int s, vector<char> &used, vector <in
         }
     }
 }
-void dfs(const vector <vector <int> > &gr, int s, vector<char> &used, vector <int> &d){
+void dfs(const vector <vector <int> > &gr, int s, vector<char> &used){ // обход в глубину
     // used[i] = 0, если вершина i не была посещена
     // used[i] = 1, если вершину i посетили
     stack <int> q;
     used[s] = 1;
     q.push(s);
-    d[s] = 0;
     while (!q.empty()){
         int v = q.top();
         q.pop();
         for(int to: gr[v]){
             if (!used[to]){
-                d[to] = d[v] + 1;
                 used[to] = 1;
                 q.push(to);
             }
